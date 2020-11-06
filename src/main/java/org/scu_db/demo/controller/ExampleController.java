@@ -26,7 +26,7 @@ public class ExampleController {
 
     @RequestMapping("/3")
     public Book example3() {
-        return bookService.findBookById(123);
+        return bookService.findBookById(225);
     }
 
     @RequestMapping("/4")

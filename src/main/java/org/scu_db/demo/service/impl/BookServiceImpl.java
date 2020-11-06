@@ -56,8 +56,8 @@ public class BookServiceImpl implements BookService {
                 return 1;
             }
         }
-        if(memberRepository.findById(book.getBorrowermemno()).isEmpty()){return 2;}
-        if(titleRepository.findById(book.getCallnumber()).isEmpty()){return 3;}
+        if(!memberRepository.findById(book.getBorrowermemno()).isPresent()){return 2;}
+        if(!titleRepository.findById(book.getCallnumber()).isPresent()){return 3;}
         bookRepository.saveAndFlush(book);
         return 0;
     }
